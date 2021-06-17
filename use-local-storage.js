@@ -3,11 +3,7 @@ const useLocalStorage = {
 	getItem: key => {
 		let getParsedItem = JSON.parse(window.localStorage.getItem(key));
 		// if @key exists return it, otherwise, return a string.
-		if (getParsedItem) {
-			return getParsedItem;
-		} else {
-			return "";
-		}
+		return getParsedItem ? getParsedItem : "";
 	},
 	// set item from local storage. pass a key and element to be stored
 	setItem: (key, element) => {

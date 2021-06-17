@@ -9,13 +9,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.min.css">
 
   <title>Frontend Mentor | Todo app</title>
 </head>
 
 <body class="light">
-  
+
   <div class="background"></div>
 
   <div class="todo-app">
@@ -27,18 +27,18 @@
     <form id="todo-form" action="" class="todo-form">
 
       <!-- Block to add a new todo -->
-      <div class="todo todo--add">
+      <div class="todo add">
         <label for="add-todo" class="todo__label">
-          <input type="checkbox" name="add-checkbox" id="add-checkbox" class="todo__checkbox">
-          <div class="todo__text">
-            <input class="todo__input" type="text" name="add-todo" id="add-todo" placeholder="Create a new todo">
+          <div id="add-checkbox" class="todo__checkbox"></div>
+          <div class="todo__container">
+            <input class="todo__input" type="text" name="add-todo" id="add-input" placeholder="Create a new todo">
           </div>
         </label>
       </div>
       <!-- todo list -->
       <div id="todoList" class="todo-list"></div>
 
-      <footer id="todos-footer" class="todos-footer">
+      <footer id="footer" class="todos-footer" style="display: none;">
         <p id="count" class="todos-footer__count">5 items left</p>
         <div class="filter-buttons">
           <label class="filter-label" aria-label="filter-all" for="filter-all"><input class="filter-radio" type="radio"
@@ -49,21 +49,21 @@
               type="radio" name="filter" id="filter-completed"> <span>Completed</span></label>
         </div>
         <span class="clear" aria-label="Clear Completed" id="clear">Clear Completed</span>
+
+        <p class="drag-drop-text">Drag and drop to reorder list</p>
       </footer>
 
     </form>
 
   </div>
 
-  <p class="drag-drop-text">Drag and drop to reorder list</p>
-
   <script src="use-local-storage.js"></script>
-  <script src="theme-switch.js"></script>
-  <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
+  <script src="theme-switch.min.js"></script>
+  <script src="sortable.min.js"></script>
   <script src="todo.js"></script>
-  <script src="konami.js"></script>
+  <script src="konami.min.js"></script>
   <script>
-    var easter_egg = new Konami(function() {
+    var easter_egg = new Konami(function () {
       document.body.className += " confetti";
 
       setTimeout(() => {

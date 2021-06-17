@@ -57,7 +57,7 @@
 
 		var app = {
 			config: {
-				inputTrigger: document.getElementById("add-input"),
+				inputTrigger: document.getElementById("add-todo"),
 				checkboxTrigger: document.getElementById("add-checkbox"),
 				formTrigger: document.getElementById("todo-form"),
 				todoListTrigger: document.getElementById("todoList"),
@@ -153,8 +153,7 @@
 				// handle remove todo from array and list
 				deleteTodoButton.addEventListener("click", function (e) {
 					e.target.parentElement.remove();
-					todos = todos.filter(todo => todo.id !== id);
-					app.countItems(todos);
+					todos = todos.filter(todo => todo.text !== value);
 
 					if (todos.length === 0) {
 						useLocalStorage.removeItem("todos");
@@ -298,8 +297,6 @@
 					todo => todo.isCompleted === false
 				);
 
-				console.log(countTodoLeft);
-
 				app.config.countTrigger.innerHTML =
 					countTodoLeft.length + " items left";
 			},
@@ -338,9 +335,4 @@
 			app.init();
 		}
 	};
-
-	document.addEventListener("DOMContentLoaded", function () {
-		// We init the Todo JS.
-		window.todoApp();
-	});
 })();
