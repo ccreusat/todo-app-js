@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <meta name="description" content="Todo List App">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Todo app</title>
+</head>
+
+<body class="light">
+  
+  <div class="background"></div>
+
+  <div class="todo-app">
+    <header class="todo-app__header">
+      <h1 class="todo-app__heading">Todo</h1>
+      <span id="switch" class="switch"></span>
+    </header>
+
+    <form id="todo-form" action="" class="todo-form">
+
+      <!-- Block to add a new todo -->
+      <div class="todo todo--add">
+        <label for="add-todo" class="todo__label">
+          <input type="checkbox" name="add-checkbox" id="add-checkbox" class="todo__checkbox">
+          <div class="todo__text">
+            <input class="todo__input" type="text" name="add-todo" id="add-todo" placeholder="Create a new todo">
+          </div>
+        </label>
+      </div>
+      <!-- todo list -->
+      <div id="todoList" class="todo-list"></div>
+
+      <footer id="todos-footer" class="todos-footer">
+        <p id="count" class="todos-footer__count">5 items left</p>
+        <div class="filter-buttons">
+          <label class="filter-label" aria-label="filter-all" for="filter-all"><input class="filter-radio" type="radio"
+              name="filter" id="filter-all" checked> <span>All</span></label>
+          <label class="filter-label" aria-label="filter-active" for="filter-active"><input class="filter-radio"
+              type="radio" name="filter" id="filter-active"> <span>Active</span></label>
+          <label class="filter-label" aria-label="filter-completed" for="filter-completed"><input class="filter-radio"
+              type="radio" name="filter" id="filter-completed"> <span>Completed</span></label>
+        </div>
+        <span class="clear" aria-label="Clear Completed" id="clear">Clear Completed</span>
+      </footer>
+
+    </form>
+
+  </div>
+
+  <p class="drag-drop-text">Drag and drop to reorder list</p>
+
+  <script src="use-local-storage.js"></script>
+  <script src="theme-switch.js"></script>
+  <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
+  <script src="todo.js"></script>
+  <script src="konami.js"></script>
+  <script>
+    var easter_egg = new Konami(function() {
+      document.body.className += " confetti";
+
+      setTimeout(() => {
+        document.body.classList.remove("confetti");
+      }, 5000);
+    });
+    easter_egg;
+  </script>
+</body>
+
+</html>
