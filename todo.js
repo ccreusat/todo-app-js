@@ -158,7 +158,7 @@
 
 					if (todos.length === 0) {
 						useLocalStorage.removeItem("todos");
-						app.showHideFooter();
+						app.showHideFooter(todos);
 					}
 				});
 
