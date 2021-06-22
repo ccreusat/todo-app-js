@@ -242,7 +242,6 @@
 			},
 			filterActive: function () {
 				// We filter the todo to show the ative ones.
-
 				if (document.querySelector(".none-completed")) {
 					document.querySelector(".none-completed").remove();
 				}
@@ -258,7 +257,6 @@
 			},
 			filterAll: function () {
 				// We reset the filter and show all the todos
-
 				if (document.querySelector(".none-completed")) {
 					document.querySelector(".none-completed").remove();
 				}
