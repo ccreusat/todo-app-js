@@ -38,9 +38,9 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Solution Page](https://your-solution-url.com)
+-   Solution URL: [Solution Page](https://www.frontendmentor.io/solutions/todo-app-js-version-and-react-version-easter-egg-jzDJayzlD)
 -   Todo App Vanilla JS: [Live site](https://ccreusat-todo-app-js.vercel.app/)
--   Todo App ReactJS: [Live site](https://ccreusat-todo-app-js.vercel.app/)
+-   Todo App ReactJS: [Live site](https://ccreusat-todo-app-react.vercel.app/)
 
 ## My process
 
