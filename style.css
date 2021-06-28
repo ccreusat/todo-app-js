@@ -90,7 +90,7 @@ li {
 }
 
 .switch {
-	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: background 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 body {
@@ -108,7 +108,7 @@ body {
 	background-position: 0 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: background 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .switch {
