@@ -133,7 +133,8 @@
 					todoElement.className = "todo";
 				}
 
-				function completeTodo(event) {
+				// handle click on label to complete or not a todo
+				labelElement.addEventListener("click", function () {
 					if (checkboxElement.checked === true) {
 						checkboxElement.checked = true;
 						app.updateTodo(value, true);
@@ -147,10 +148,11 @@
 					useLocalStorage.setItem("todos", todos);
 					app.countItems(todos);
 					app.showHideFooter(todos);
-				}
+				});
 
-				function deleteTodo(event) {
-					event.target.parentElement.remove();
+				// handle remove todo from array and list
+				deleteTodoButton.addEventListener("click", function (e) {
+					e.target.parentElement.remove();
 					todos = todos.filter(todo => todo.id !== id);
 					app.countItems(todos);
 
@@ -158,16 +160,6 @@
 						useLocalStorage.removeItem("todos");
 						app.showHideFooter(todos);
 					}
-				}
-
-				// handle click on label to complete or not a todo
-				labelElement.addEventListener("click", function (e) {
-					completeTodo(e);
-				});
-
-				// handle remove todo from array and list
-				deleteTodoButton.addEventListener("click", function (e) {
-					deleteTodo(e);
 				});
 
 				// we add all the elements to the list
@@ -303,6 +295,8 @@
 				const countTodoLeft = arr.filter(
 					todo => todo.isCompleted === false
 				);
+
+				console.log(countTodoLeft);
 
 				app.config.countTrigger.innerHTML =
 					countTodoLeft.length + " items left";
