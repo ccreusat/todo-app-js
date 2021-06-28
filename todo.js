@@ -164,12 +164,20 @@
 				}
 
 				// handle click on label to complete or not a todo
-				labelElement.addEventListener("touchstart", completeTodo(e));
-				labelElement.addEventListener("click", completeTodo(e));
+				labelElement.addEventListener("touchstart", function (e) {
+					completeTodo(e);
+				});
+				labelElement.addEventListener("click", function (e) {
+					completeTodo(e);
+				});
 
 				// handle remove todo from array and list
-				deleteTodoButton.addEventListener("touchstart", deleteTodo(e));
-				deleteTodoButton.addEventListener("click", deleteTodo(e));
+				deleteTodoButton.addEventListener("touchstart", function (e) {
+					deleteTodo(e);
+				});
+				deleteTodoButton.addEventListener("click", function (e) {
+					deleteTodo(e);
+				});
 
 				// we add all the elements to the list
 				todoElement.appendChild(labelElement);
