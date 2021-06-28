@@ -164,8 +164,8 @@
 				}
 
 				// handle click on label to complete or not a todo
-				labelElement.addEventListener("touchstart", completeTodo());
-				labelElement.addEventListener("click", completeTodo());
+				labelElement.addEventListener("touchstart", completeTodo(e));
+				labelElement.addEventListener("click", completeTodo(e));
 
 				// handle remove todo from array and list
 				deleteTodoButton.addEventListener("touchstart", deleteTodo(e));
