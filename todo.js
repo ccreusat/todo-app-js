@@ -133,8 +133,9 @@
 					todoElement.className = "todo";
 				}
 
-				// handle click on label to complete or not a todo
-				labelElement.addEventListener("click", function () {
+				function completeTodo(event) {
+					event.preventDefault();
+
 					if (checkboxElement.checked === true) {
 						checkboxElement.checked = true;
 						app.updateTodo(value, true);
@@ -148,11 +149,11 @@
 					useLocalStorage.setItem("todos", todos);
 					app.countItems(todos);
 					app.showHideFooter(todos);
-				});
+				}
 
-				// handle remove todo from array and list
-				deleteTodoButton.addEventListener("click", function (e) {
-					e.target.parentElement.remove();
+				function deleteTodo(event) {
+					event.preventDefault();
+					event.target.parentElement.remove();
 					todos = todos.filter(todo => todo.id !== id);
 					app.countItems(todos);
 
@@ -160,7 +161,15 @@
 						useLocalStorage.removeItem("todos");
 						app.showHideFooter(todos);
 					}
-				});
+				}
+
+				// handle click on label to complete or not a todo
+				labelElement.addEventListener("touchstart", completeTodo());
+				labelElement.addEventListener("click", completeTodo());
+
+				// handle remove todo from array and list
+				deleteTodoButton.addEventListener("touchstart", deleteTodo(e));
+				deleteTodoButton.addEventListener("click", deleteTodo(e));
 
 				// we add all the elements to the list
 				todoElement.appendChild(labelElement);
