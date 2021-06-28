@@ -134,8 +134,6 @@
 				}
 
 				function completeTodo(event) {
-					event.preventDefault();
-
 					if (checkboxElement.checked === true) {
 						checkboxElement.checked = true;
 						app.updateTodo(value, true);
@@ -152,7 +150,6 @@
 				}
 
 				function deleteTodo(event) {
-					event.preventDefault();
 					event.target.parentElement.remove();
 					todos = todos.filter(todo => todo.id !== id);
 					app.countItems(todos);
@@ -164,17 +161,11 @@
 				}
 
 				// handle click on label to complete or not a todo
-				labelElement.addEventListener("touchstart", function (e) {
-					completeTodo(e);
-				});
 				labelElement.addEventListener("click", function (e) {
 					completeTodo(e);
 				});
 
 				// handle remove todo from array and list
-				deleteTodoButton.addEventListener("touchstart", function (e) {
-					deleteTodo(e);
-				});
 				deleteTodoButton.addEventListener("click", function (e) {
 					deleteTodo(e);
 				});
@@ -312,8 +303,6 @@
 				const countTodoLeft = arr.filter(
 					todo => todo.isCompleted === false
 				);
-
-				console.log(countTodoLeft);
 
 				app.config.countTrigger.innerHTML =
 					countTodoLeft.length + " items left";
