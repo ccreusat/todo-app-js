@@ -24,7 +24,7 @@
 	<body class="light">
 		<div class="background"></div>
 
-		<div class="todo-app">
+		<main class="todo-app">
 			<header class="todo-app__header">
 				<h1 class="todo-app__heading">Todo</h1>
 				<span id="switch" class="switch"></span>
@@ -35,6 +35,7 @@
 				<div class="todo add">
 					<div class="todo__label">
 						<button
+							aria-label="add a todo"
 							type="submit"
 							id="add-checkbox"
 							class="todo__checkbox"
@@ -99,7 +100,7 @@
 					<p class="drag-drop-text">Drag and drop to reorder list</p>
 				</footer>
 			</form>
-		</div>
+		</main>
 
 		<script src="use-local-storage.js"></script>
 		<script src="theme-switch.min.js"></script>
